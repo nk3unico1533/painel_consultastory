@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/effect-coverflow"; // IMPORT QUE FALTAVA
+
 import { Pagination } from "swiper/modules";
 
 import ConsultaCard from "../components/ConsultaCard";
