@@ -1,8 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from database import Base, engine
-from .routes import consultas
+
+from backend.database import Base, engine
+from backend.routes import consultas
 
 Base.metadata.create_all(bind=engine)
 
@@ -17,8 +18,9 @@ app.add_middleware(
 
 app.include_router(consultas.router)
 
-# arquivos estáticos
+# arquivos estáticos (imagens)
 app.mount("/static", StaticFiles(directory="backend/static"), name="static")
+
 
 @app.get("/")
 def root():
