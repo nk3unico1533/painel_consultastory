@@ -1,59 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Painel de Consultas</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Painel Consulta</title>
 
-    <!-- Swiper.js CDN -->
+    <!-- Swiper CSS CDN -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-</head>
+  </head>
 
-<body>
-
-<div class="swiper">
-    <div class="swiper-wrapper" id="consulta-container">
-        <!-- Inserção dinâmica -->
-    </div>
-
-    <div class="swiper-pagination"></div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-async function carregarConsultas() {
-    const res = await fetch("http://localhost:8000/consultas");
-    const consultas = await res.json();
-
-    const container = document.getElementById("consulta-container");
-
-    consultas.forEach(c => {
-        container.innerHTML += `
-            <div class="swiper-slide">
-                <img src="http://localhost:8000/static/uploads/${c.imagem}" class="imagem-card">
-                <h2>${c.titulo}</h2>
-                <p>${c.descricao}</p>
-            </div>
-        `;
-    });
-
-    new Swiper(".swiper", {
-        pagination: {
-            el: ".swiper-pagination",
-        },
-        loop: true,
-        slidesPerView: 1,
-        centeredSlides: true
-    });
-}
-
-carregarConsultas();
-</script>
-
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
