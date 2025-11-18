@@ -1,4 +1,4 @@
-import Stories from "./page/Stories";
+import Stories from "./pages/Stories";
 
 export default function App() {
   return <Stories />;
