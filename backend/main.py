@@ -19,7 +19,6 @@ app.add_middleware(
 app.include_router(consultas.router)
 
 # arquivos estáticos (imagens)
-app.mount("/static", StaticFiles(directory="backend/static"), name="static")
 
 
 @app.get("/")
