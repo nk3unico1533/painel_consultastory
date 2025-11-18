@@ -1,38 +1,38 @@
 body {
   margin: 0;
-  background: #111;
-  font-family: sans-serif;
+  background: #000;
   color: #fff;
+  font-family: sans-serif;
   display: flex;
   justify-content: center;
 }
 
-.app {
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
+.container {
+  margin-top: 40px;
+  width: 320px;
   text-align: center;
 }
 
-.stories-container {
-  margin-top: 20px;
+.story-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 15px;
 }
 
-.story {
-  position: relative;
+.story-card input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 15px;
 }
 
-.story img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.story h3 {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  padding: 4px 8px;
-  background: rgba(0,0,0,0.4);
-  border-radius: 5px;
+.nav button {
+  margin: 10px;
+  padding: 10px 15px;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+  background: #222;
+  color: white;
 }
